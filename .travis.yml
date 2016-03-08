@@ -1,0 +1,12 @@
+sudo: false
+cache: bundler
+language: ruby
+bundler_args: --without debugging
+rvm:
+  - 2.3.0
+  - 2.2.4
+  - ruby-head
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+  fast_finish: true
