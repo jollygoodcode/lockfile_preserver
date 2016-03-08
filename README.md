@@ -1,5 +1,8 @@
 # LockfilePreserver
 
+[![Gem Version](https://badge.fury.io/rb/lockfile_preserver.svg)](https://badge.fury.io/rb/lockfile_preserver)
+[![Build Status](https://travis-ci.org/jollygoodcode/lockfile_preserver.svg?branch=master)](https://travis-ci.org/jollygoodcode/lockfile_preserver)
+
 Preserve `BUNDLED_WITH` section of your lockfile!
 
 ## Installation
