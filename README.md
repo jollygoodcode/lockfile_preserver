@@ -23,9 +23,31 @@ Or install it yourself as:
 
 ## Usage
 
-```ruby
-LockfilePreserver.keep(gemfile, updated_gemfile, :bundled_with)
+Given a folder where `Gemfile` has some outdated gems:
+
 ```
+.
+├── Gemfile
+└── Gemfile.lock
+```
+
+```ruby
+lockfile = IO.read "Gemfile.lock"
+```
+
+Then we do a `bundle update`. The lockfile has been updated:
+
+```ruby
+updated_lockfile = IO.read "Gemfile.lock"
+```
+
+Preserve `BUNDLED_WITH` changes to your lockfile:
+
+```ruby
+LockfilePreserver.keep(lockfile, updated_lockfile)
+```
+
+That's it!
 
 ## Development
 
