@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/lockfile_preserver.svg)](https://badge.fury.io/rb/lockfile_preserver)
 [![Build Status](https://travis-ci.org/jollygoodcode/lockfile_preserver.svg?branch=master)](https://travis-ci.org/jollygoodcode/lockfile_preserver)
+[![Code Climate](https://codeclimate.com/github/jollygoodcode/lockfile_preserver/badges/gpa.svg)](https://codeclimate.com/github/jollygoodcode/lockfile_preserver)
 
 Preserve `BUNDLED_WITH` section of your lockfile!
 
