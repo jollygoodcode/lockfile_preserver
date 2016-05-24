@@ -7,4 +7,5 @@ group :development do
   gem "bundler"
   gem "rake"
   gem "rspec", "~> 3.4"
+  gem "pry"
 end
