@@ -1,8 +1,8 @@
 module LockfilePreserver
   class RubyVersion
-    def initialize(original, current)
+    def initialize(original, updated)
       @original = original
-      @current = current
+      @updated = updated
     end
 
     def keep
@@ -15,7 +15,7 @@ module LockfilePreserver
 
     private
 
-      attr_reader :original, :current
+      attr_reader :original, :updated
 
       RUBY_VERSION = "RUBY VERSION".freeze
       VERSION_PATTERN = %r{.+}
@@ -27,11 +27,11 @@ module LockfilePreserver
       private_constant :NEW_LINE
 
       def keep_ruby_version
-        current.sub(REGEXP, ruby_version_section)
+        updated.sub(REGEXP, ruby_version_section)
       end
 
       def remove_ruby_version
-        current.sub(REGEXP, NEW_LINE)
+        updated.sub(REGEXP, NEW_LINE)
       end
 
       def ruby_version_section
