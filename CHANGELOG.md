@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.1 - 2016.06.02
+
 - Introduce `LockfilePreserver::RubyVersion` [#2][pr2]
 - Introduce `LockfilePreserver::Pipeline` [#2][pr2]
 - Refactor spec fixture originations [#2][pr2]
