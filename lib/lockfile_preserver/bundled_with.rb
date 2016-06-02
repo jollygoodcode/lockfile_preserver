@@ -1,8 +1,8 @@
 module LockfilePreserver
   class BundledWith
-    def initialize(original, current)
+    def initialize(original, updated)
       @original = original
-      @current = current
+      @updated = updated
     end
 
     def keep
@@ -15,7 +15,7 @@ module LockfilePreserver
 
     private
 
-      attr_reader :original, :current
+      attr_reader :original, :updated
 
       BUNDLED_WITH = "BUNDLED WITH".freeze
       REGEXP = %r{\n\nBUNDLED WITH\n\s+(?<version>#{Gem::Version::VERSION_PATTERN})\n*}
@@ -26,11 +26,11 @@ module LockfilePreserver
       private_constant :NEW_LINE
 
       def keep_bundled_with
-        current.sub(REGEXP, bundled_with)
+        updated.sub(REGEXP, bundled_with)
       end
 
       def remove_bundled_with
-        current.sub(REGEXP, NEW_LINE)
+        updated.sub(REGEXP, NEW_LINE)
       end
 
       def bundled_with
