@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.0.2 - 2016.06.14
+
+- Fix `LockfilePreserver::RubyVersion` does not add `RUBY VERSION` section back to lockfile bug [#3](https://github.com/jollygoodcode/lockfile_preserver/pull/3)
+
 ## 1.0.1 - 2016.06.02
 
 - Introduce `LockfilePreserver::RubyVersion` [#2][pr2]
