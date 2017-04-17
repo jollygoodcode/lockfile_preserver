@@ -7,6 +7,7 @@ RSpec.describe LockfilePreserver::Pipeline do
       pipeline = described_class.new [
         LockfilePreserver::BundledWith,
         LockfilePreserver::RubyVersion,
+        LockfilePreserver::Platforms,
       ]
 
       result = pipeline.call(original, updated)

@@ -2,6 +2,7 @@ require "lockfile_preserver/version"
 require "lockfile_preserver/pipeline"
 require "lockfile_preserver/bundled_with"
 require "lockfile_preserver/ruby_version"
+require "lockfile_preserver/platforms"
 
 module LockfilePreserver
   def self.keep(original, updated, section = :bundled_with)
@@ -9,6 +10,8 @@ module LockfilePreserver
       LockfilePreserver::BundledWith.new(original, updated).keep
     elsif section == :ruby_version
       LockfilePreserver::RubyVersion.new(original, updated).keep
+    elsif section == :platforms
+      LockfilePreserver::Platforms.new(original, updated).keep
     elsif
       abort %(We currently only support preserve "BUNDLED WITH" & "RUBY VERSION" section of lockfile.)
     end
@@ -17,7 +20,8 @@ module LockfilePreserver
   def self.keep_all(original, updated)
     pipeline = Pipeline.new [
       LockfilePreserver::BundledWith,
-      LockfilePreserver::RubyVersion  
+      LockfilePreserver::RubyVersion,
+      LockfilePreserver::Platforms,
     ]
 
     pipeline.call(original, updated)
