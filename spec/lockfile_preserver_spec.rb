@@ -30,14 +30,25 @@ RSpec.describe LockfilePreserver do
         exercise
       end
     end
+
+    context "keep platforms" do
+      let(:section) { :platforms }
+
+      it "invokes correct method" do
+        expect(LockfilePreserver::Platforms).to receive(:new) { double(keep: true) }
+
+        exercise
+      end
+    end
   end
 
   describe ".keep_all" do
     it "keep bundled with and ruby version" do
       expect(LockfilePreserver::BundledWith).to receive(:new) { double(keep: true) }
       expect(LockfilePreserver::RubyVersion).to receive(:new) { double(keep: true) }
+      expect(LockfilePreserver::Platforms).to receive(:new) { double(keep: true) }
 
       described_class.keep_all(original, updated)
     end
-  end  
+  end
 end
