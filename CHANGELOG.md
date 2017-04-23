@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.0.3 - 2017.04.24
+
+- Preserve Platform section in Gemfile.lock [#4](https://github.com/jollygoodcode/lockfile_preserver/pull/4)
+
 ## 1.0.2 - 2016.06.14
 
 - Fix `LockfilePreserver::RubyVersion` does not add `RUBY VERSION` section back to lockfile bug [#3](https://github.com/jollygoodcode/lockfile_preserver/pull/3)
