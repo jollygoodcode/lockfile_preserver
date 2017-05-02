@@ -18,7 +18,7 @@ module LockfilePreserver
       attr_reader :original, :updated
 
       BUNDLED_WITH = "BUNDLED WITH".freeze
-      REGEXP = %r{\n\nBUNDLED WITH\n\s+(?<version>#{Gem::Version::VERSION_PATTERN})\n*}
+      REGEXP = %r{\nBUNDLED WITH\n\s+(?<version>#{Gem::Version::VERSION_PATTERN})\n*}
       NEW_LINE = "\n".freeze
 
       private_constant :BUNDLED_WITH
