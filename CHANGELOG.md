@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.0.4 - 2017.05.03
+
+- Update `REGEXP` to find `BUNDLED_WITH` without a newline above
+
 ## 1.0.3 - 2017.04.24
 
 - Preserve Platform section in Gemfile.lock [#4](https://github.com/jollygoodcode/lockfile_preserver/pull/4)
